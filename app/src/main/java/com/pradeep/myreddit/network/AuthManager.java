@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class AuthManager extends RedditManager {
 
-    private static final String STATE = "reddit_reader_android";
+    private static final String STATE = "my_reddit";
     private static final String USER_PREFS_KEY = "user_prefs_key";
     public static final String REDIRECT_URI = "http://localhost:4000/oauth2-callback";
     private static final String CLIENT_ID = "Li4KDbjjUs7_Bw";

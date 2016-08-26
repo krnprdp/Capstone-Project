@@ -17,7 +17,7 @@
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_material_dark">
+        android:background="@color/icons">
 
         <ProgressBar
             android:id="@id/progress_circular"
@@ -36,6 +36,5 @@
             android:visibility="invisible" />
 
     </FrameLayout>
-
 
 </LinearLayout>

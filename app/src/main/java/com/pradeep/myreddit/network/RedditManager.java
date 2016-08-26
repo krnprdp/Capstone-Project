@@ -17,7 +17,7 @@ public class RedditManager {
 
     protected static final String UNAUTH_API_BASE = "https://www.reddit.com";
     protected static final String AUTH_API_BASE = "https://oauth.reddit.com";
-    protected static final String USER_AGENT = "android:com.enthusiast94.reddit_reader:v1.0.0 (by /u/enthusiast94)";
+    protected static final String USER_AGENT = "android:com.pradeep.myreddit:v1.0.0 (by /u/krnprdp)";
 
     protected static AsyncHttpClient getAsyncHttpClient(boolean authenticationRequired) {
         AsyncHttpClient client = new AsyncHttpClient();

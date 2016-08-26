@@ -393,13 +393,6 @@ public class MainActivity extends AppCompatActivity {
     // called every time the menu is about to be shown
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        if (AuthManager.isUserAuthenticated()) {
-            menu.findItem(R.id.action_login).setVisible(false);
-            menu.findItem(R.id.action_logout).setVisible(true);
-        } else {
-            menu.findItem(R.id.action_login).setVisible(true);
-            menu.findItem(R.id.action_logout).setVisible(false);
-        }
 
         return super.onPrepareOptionsMenu(menu);
     }
@@ -412,10 +405,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_login) {
-            EventBus.getDefault().post(new ViewContentEvent(getResources().getString(R.string.action_login),
-                    AuthManager.getAuthUrl()));
-        } else if (id == R.id.action_sort_hot || id == R.id.action_sort_new || id == R.id.action_sort_rising ||
+        if (id == R.id.action_sort_hot || id == R.id.action_sort_new || id == R.id.action_sort_rising ||
                 id == R.id.action_sort_controversial || id == R.id.action_sort_top) {
             sort = item.getTitle().toString();
             updateAppBarTitlesWithPostInfo();
@@ -451,10 +441,6 @@ public class MainActivity extends AppCompatActivity {
             fTransaction.add(android.R.id.content, new ManageSubredditsFragment());
             fTransaction.addToBackStack(null);
             fTransaction.commit();
-        } else if (id == R.id.action_logout) {
-            AuthManager.deauth();
-
-            EventBus.getDefault().post(new DeauthenticatedEvent());
         }
 
         return super.onOptionsItemSelected(item);
