@@ -32,7 +32,7 @@ public class SubredditsManager extends RedditManager {
         // check if requested subreddits are already cached or not
         // if yes, simply return them, else send request to server and then cache them
         Gson gson = new Gson();
-        String subredditsString = null;//Helpers.readFromPrefs(App.getAppContext(), SUBREDDITS_PREFS_KEY);
+        String subredditsString = Helpers.readFromPrefs(App.getAppContext(), SUBREDDITS_PREFS_KEY);
         if (subredditsString != null) {
             List<Subreddit> subreddits = Arrays.asList(gson.fromJson(subredditsString, Subreddit[].class));
             if (callback != null) callback.onSuccess(subreddits);

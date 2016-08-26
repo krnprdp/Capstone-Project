@@ -21,9 +21,9 @@ public class Helpers {
 
         for (String key : params.keySet()) {
             if (pos == 0) {
-                paramsString += key + "=" + params.get(key);
+                paramsString  += key + "=" + params.get(key);
             } else {
-                paramsString += "&" + key + "=" + params.get(key);
+                paramsString  += "&" + key + "=" + params.get(key);
             }
 
             pos++;
@@ -77,13 +77,17 @@ public class Helpers {
 
         if (diffWeeks > 0) {
             return diffWeeks + "w";
-        } else if (diffDays > 0) {
+        }
+        else if (diffDays > 0) {
             return diffDays + "d";
-        } else if (diffHours > 0) {
+        }
+        else if (diffHours > 0) {
             return diffHours + "h";
-        } else if (diffMinutes > 0) {
+        }
+        else if (diffMinutes > 0) {
             return diffMinutes + "m";
-        } else {
+        }
+        else {
             return diffSeconds + "s";
         }
     }
