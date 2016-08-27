@@ -24,6 +24,7 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.pradeep.myreddit.R;
 import com.pradeep.myreddit.events.*;
 import com.pradeep.myreddit.fragments.CommentsFragment;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String SORT_BUNDLE_KEY = "sort_key";
     private ProgressDialog progressDialog;
     private boolean isRefreshingAccessToken = false; // Makes sure that multiple 'refresh access token' are not being sent at the same time
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+        // Analytics instance
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         /**
          * Find views
@@ -132,6 +137,12 @@ public class MainActivity extends AppCompatActivity {
         for (Subreddit subreddit : subreddits) {
             if (subreddit.isSelected()) {
                 selectedSubreddits.add(subreddit);
+
+                // Logs the subreddit using Analytics
+                Bundle bundle = new Bundle();
+                bundle.putString(FirebaseAnalytics.Param.ITEM_ID, subreddit.getId());
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, subreddit.getName());
+                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
             }
         }
 
