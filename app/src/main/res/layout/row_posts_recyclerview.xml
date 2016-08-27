@@ -17,6 +17,8 @@
             android:paddingBottom="@dimen/spacing_tiny"
             android:paddingLeft="@dimen/spacing_7dp"
             android:paddingRight="@dimen/spacing_7dp"
+            android:paddingStart="@dimen/spacing_7dp"
+            android:paddingEnd="@dimen/spacing_7dp"
             android:paddingTop="@dimen/spacing_tiny">
 
             <LinearLayout
@@ -59,6 +61,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/spacing_tiny"
                         android:layout_marginRight="@dimen/spacing_tiny"
+                        android:layout_marginStart="@dimen/spacing_tiny"
+                        android:layout_marginEnd="@dimen/spacing_tiny"
                         android:text="@string/solid_circle_symbol" />
 
                     <TextView
@@ -74,6 +78,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/spacing_tiny"
                         android:layout_marginRight="@dimen/spacing_tiny"
+                        android:layout_marginStart="@dimen/spacing_tiny"
+                        android:layout_marginEnd="@dimen/spacing_tiny"
                         android:text="@string/solid_circle_symbol" />
 
                     <TextView
@@ -97,6 +103,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/spacing_7dp"
+                android:layout_marginStart="@dimen/spacing_7dp"
                 android:scaleType="centerCrop" />
 
         </RelativeLayout>
@@ -107,6 +114,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_7dp"
             android:layout_marginRight="@dimen/spacing_7dp"
+            android:layout_marginStart="@dimen/spacing_7dp"
+            android:layout_marginEnd="@dimen/spacing_7dp"
             android:background="@drawable/self_text_border"
             android:padding="@dimen/spacing_7dp">
 

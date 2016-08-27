@@ -7,6 +7,8 @@
     android:paddingBottom="@dimen/spacing_tiny"
     android:paddingLeft="@dimen/font_small"
     android:paddingRight="@dimen/font_small"
+    android:paddingStart="@dimen/font_small"
+    android:paddingEnd="@dimen/font_small"
     android:paddingTop="@dimen/spacing_tiny">
 
     <TextView

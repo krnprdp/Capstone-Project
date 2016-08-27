@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="@dimen/spacing_20dp"
-    android:paddingRight="@dimen/spacing_20dp">
+    android:paddingStart="@dimen/spacing_20dp"
+    android:paddingRight="@dimen/spacing_20dp"
+    android:paddingEnd="@dimen/spacing_20dp">
 
     <EditText
         android:id="@+id/subreddit_edittext"

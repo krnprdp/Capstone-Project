@@ -16,6 +16,7 @@
             android:layout_width="@dimen/child_comment_indicator_width"
             android:layout_height="match_parent"
             android:layout_marginRight="@dimen/spacing_tiny"
+            android:layout_marginEnd="@dimen/spacing_tiny"
             android:background="@color/divider" />
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -56,7 +57,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/spacing_7dp"
+                android:paddingEnd="@dimen/spacing_7dp"
                 android:paddingRight="@dimen/spacing_7dp"
+                android:paddingStart="@dimen/spacing_7dp"
                 android:paddingTop="@dimen/spacing_7dp">
 
                 <TextView
@@ -72,6 +75,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/spacing_tiny"
                     android:layout_marginRight="@dimen/spacing_tiny"
+                    android:layout_marginStart="@dimen/spacing_tiny"
+                    android:layout_marginEnd="@dimen/spacing_tiny"
                     android:text="@string/solid_circle_symbol" />
 
                 <TextView
@@ -86,6 +91,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/spacing_tiny"
                     android:layout_marginRight="@dimen/spacing_tiny"
+                    android:layout_marginStart="@dimen/spacing_tiny"
+                    android:layout_marginEnd="@dimen/spacing_tiny"
                     android:text="@string/solid_circle_symbol" />
 
                 <TextView
@@ -104,6 +111,8 @@
                 android:background="?attr/selectableItemBackground"
                 android:paddingBottom="@dimen/spacing_7dp"
                 android:paddingLeft="@dimen/spacing_7dp"
+                android:paddingStart="@dimen/spacing_7dp"
+                android:paddingEnd="@dimen/spacing_7dp"
                 android:paddingRight="@dimen/spacing_7dp" />
 
             <LinearLayout
