@@ -48,4 +48,5 @@
     <string name="label_share_via">Share via:</string>
     <string name="solid_circle_symbol">•</string>
     <string name="label_refreshing_user_session">Refreshing user session…</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>
