@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(List<Subreddit> data) {
                 progressDialog.hide();
-
+                Toast.makeText(MainActivity.this,data.iterator().toString(),Toast.LENGTH_SHORT).show();
                 setupViewPagerAndTabs(data);
             }
 
