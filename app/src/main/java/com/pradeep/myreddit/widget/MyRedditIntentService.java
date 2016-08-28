@@ -27,6 +27,7 @@ public class MyRedditIntentService  extends IntentService {
             int[] appWidgetIds = appWidgetManager.getAppWidgetIds(
                     new ComponentName(this, MyRedditWidget.class));
 
+
             for (int appWidgetId : appWidgetIds) {
                 Intent launchIntent = new Intent(this, MainActivity.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, launchIntent, 0);

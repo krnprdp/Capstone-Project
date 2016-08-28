@@ -2,8 +2,10 @@ package com.pradeep.myreddit;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -57,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private boolean isRefreshingAccessToken = false; // Makes sure that multiple 'refresh access token' are not being sent at the same time
     private FirebaseAnalytics mFirebaseAnalytics;
+    public static String AUTHORITY = "com.pradeep.myreddit.myprovider";
+    public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +121,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(List<Subreddit> data) {
                 progressDialog.hide();
-                Toast.makeText(MainActivity.this,data.iterator().toString(),Toast.LENGTH_SHORT).show();
+
+                getContentResolver().delete(CONTENT_URI, null, null);
+                ContentValues cv = new ContentValues();
+                for (Subreddit subr : data) {
+                    if (subr.isSelected()) {
+                        cv.put("subreddit_name", subr.getName());
+                        getContentResolver().insert(CONTENT_URI, cv);
+                    }
+                }
+
+
+                Cursor resultCursor = getContentResolver().query(CONTENT_URI, null,
+                        "@", null, null);
+                resultCursor.moveToFirst();
+
                 setupViewPagerAndTabs(data);
             }
 

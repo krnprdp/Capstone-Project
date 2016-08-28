@@ -32,6 +32,11 @@
         <service
             android:name=".widget.MyRedditIntentService"
             android:exported="false"></service>
+
+        <provider
+            android:name="com.pradeep.myreddit.provider.MyRedditProvider"
+            android:authorities="com.pradeep.myreddit.myprovider" />
+
     </application>
 
 </manifest>
