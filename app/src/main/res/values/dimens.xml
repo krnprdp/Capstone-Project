@@ -23,6 +23,6 @@
     <dimen name="divider_height">1dp</dimen>
     <dimen name="self_text_border_width">1dp</dimen>
     <dimen name="widget_margin">8dp</dimen>
-    <dimen name="widget_min_height">40dp</dimen>
+    <dimen name="widget_min_height">180dp</dimen>
     <dimen name="widget_min_width">180dp</dimen>
 </resources>

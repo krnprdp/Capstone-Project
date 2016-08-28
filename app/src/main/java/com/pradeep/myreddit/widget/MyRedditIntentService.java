@@ -20,13 +20,29 @@ public class MyRedditIntentService  extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        //This is merely a proof of concept method, it doesn't really add any value to the app
+        //This just adds some favourite selected subreddits from the app to the home screen
         if (intent != null) {
 
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
             int[] appWidgetIds = appWidgetManager.getAppWidgetIds(
                     new ComponentName(this, MyRedditWidget.class));
 
+            Cursor data = getContentResolver().query(
+                    MainActivity.CONTENT_URI,
+                    null,
+                    null,
+                    null,
+                    null);
+
+            data.moveToFirst();
+            String subr = "";
+            try {
+                while (data.moveToNext()) {
+                    subr += data.getString(0) + ",";
+                }
+            } finally {
+                data.close();
+            }
 
             for (int appWidgetId : appWidgetIds) {
                 Intent launchIntent = new Intent(this, MainActivity.class);
@@ -34,7 +50,7 @@ public class MyRedditIntentService  extends IntentService {
 
                 // Construct the RemoteViews object
                 RemoteViews views = new RemoteViews(this.getPackageName(), R.layout.myreddit_widget);
-                views.setTextViewText(R.id.appwidget_text, "TEST");
+                views.setTextViewText(R.id.appwidget_text,   subr );
                 views.setOnClickPendingIntent(R.id.appwidget_text, pendingIntent);
 
                 // Instruct the widget manager to update the widget

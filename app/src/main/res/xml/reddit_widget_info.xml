@@ -3,4 +3,4 @@
     android:initialLayout="@layout/myreddit_widget"
     android:minHeight="@dimen/widget_min_height"
     android:minWidth="@dimen/widget_min_width"
-    android:updatePeriodMillis="3600000" />
+    android:updatePeriodMillis="1000000" />
